@@ -7,13 +7,16 @@ import { Type2formComponent } from './type2form/type2form.component';
 
 
 @NgModule({
-  declarations: [
-    GameComponent,
-    Type1formComponent,
-    Type2formComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        GameComponent,
+        Type1formComponent,
+        Type2formComponent
+    ],
+    exports: [
+        GameComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class GameModule { }
