@@ -8,7 +8,7 @@ import {Gametype} from "../models/gametype.model";
 })
 export class GameComponent implements OnInit {
 
-  @Input() gameType?: Gametype = undefined;
+  @Input() gameType?: string = undefined;
 
   public type1active: boolean = false;
   public type2active: boolean = false;
@@ -16,10 +16,10 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.gameType == Gametype.TYPE1) {
+    if (this.gameType == "Typ 1") {
       this.type1active = true;
       this.type2active = false;
-    } else if (this.gameType == Gametype.TYPE2) {
+    } else if (this.gameType == "Typ 2") {
       this.type1active = false;
       this.type2active = true;
     }

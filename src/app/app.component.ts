@@ -12,6 +12,10 @@ export class AppComponent {
   public GameType = Gametype;
   public gameTypes = Object.values(this.GameType);
 
+  public types = Object.keys(this.GameType).filter((item) => {
+    return isNaN(Number(item));
+  });
+
   public currentType: Gametype = Gametype.TYPE1;
 
   public toggleType(): void {
