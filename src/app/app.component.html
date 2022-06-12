@@ -1,2 +1,13 @@
-<sortfest22-game gameType="gametype-1"></sortfest22-game>
-<sortfest22-game gameType="gametype-2"></sortfest22-game>
+
+
+<button (click)="toggleType()">Toggle form type</button>
+
+<sortfest22-game [gameType]="currentType" *ngFor=currentType></sortfest22-game>
+
+<select [(ngModel)]="currentType" (ngModelChange)="test()">
+  <option *ngFor="let gameType of gameTypes"
+  [value]="gameType">
+    {{gameType}}
+  </option>
+</select>
+

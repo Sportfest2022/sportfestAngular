@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Gametype} from "../models/gametype.model";
 
 @Component({
   selector: 'sortfest22-game',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  @Input() gameType: string = "";
+  @Input() gameType?: Gametype = undefined;
 
   public type1active: boolean = false;
   public type2active: boolean = false;
@@ -15,9 +16,11 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.gameType == "gametype-1") {
+    if (this.gameType == Gametype.TYPE1) {
       this.type1active = true;
-    } else if (this.gameType == "gametype-2") {
+      this.type2active = false;
+    } else if (this.gameType == Gametype.TYPE2) {
+      this.type1active = false;
       this.type2active = true;
     }
   }

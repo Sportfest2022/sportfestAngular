@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Gametype} from "./models/gametype.model";
+import {concatMap, interval, startWith, Subject, switchMap} from "rxjs";
+import {GameComponent} from "./game/game.component";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sportfest';
+  public GameType = Gametype;
+  public gameTypes = Object.values(this.GameType);
+
+  public currentType: Gametype = Gametype.TYPE1;
+
+  public toggleType(): void {
+    if (this.currentType == Gametype.TYPE1) {
+      this.currentType = Gametype.TYPE2;
+    } else {
+      this.currentType = Gametype.TYPE1;
+    }
+  }
+
+  public test() {
+  }
 }

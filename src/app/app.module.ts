@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {GameModule} from "./game/game.module";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import {GameModule} from "./game/game.module";
   ],
   imports: [
     BrowserModule,
-    GameModule
+    GameModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
