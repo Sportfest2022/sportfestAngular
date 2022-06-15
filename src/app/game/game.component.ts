@@ -1,8 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Gametype} from "../models/gametype.model";
 
 @Component({
-  selector: 'sortfest22-game',
+  selector: 'sportfest22-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
@@ -16,10 +15,10 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.gameType == "Typ 1") {
+    if (this.gameType == "TYPE1") {
       this.type1active = true;
       this.type2active = false;
-    } else if (this.gameType == "Typ 2") {
+    } else if (this.gameType == "TYPE2") {
       this.type1active = false;
       this.type2active = true;
     }

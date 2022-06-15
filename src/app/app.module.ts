@@ -13,8 +13,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    GameModule,
-    FormsModule
+    FormsModule,
+    GameModule
   ],
   providers: [],
   bootstrap: [AppComponent]

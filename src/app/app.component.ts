@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 import {Gametype} from "./models/gametype.model";
-import {concatMap, interval, startWith, Subject, switchMap} from "rxjs";
-import {GameComponent} from "./game/game.component";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +8,6 @@ import {GameComponent} from "./game/game.component";
 })
 export class AppComponent {
   public GameType = Gametype;
-  public gameTypes = Object.values(this.GameType);
 
   public types = Object.keys(this.GameType).filter((item) => {
     return isNaN(Number(item));
