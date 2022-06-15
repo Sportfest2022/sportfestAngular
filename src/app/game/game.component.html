@@ -1,5 +1,7 @@
-<p>game works!</p>
+<h2>Game: {{gameType}}</h2>
 
+<sportfest22-type1form *ngIf="type1active">TYP 1</sportfest22-type1form>
+<sportfest22-type2form *ngIf="type2active">TYP 2</sportfest22-type2form>
+<sportfest22-type-not-found *ngIf="!type1active && !type2active"> :( Ein Fehler aufdichgetreten</sportfest22-type-not-found>
 
-<p *ngIf="type1active">TYP 1</p>
-<p *ngIf="type2active">TYP 2</p>
+<hr>

@@ -1,13 +1,3 @@
-
-
-<button (click)="toggleType()">Toggle form type</button>
-
-<sortfest22-game [gameType]="currentType" *ngFor=currentType></sortfest22-game>
-
-<select [(ngModel)]="currentType" (ngModelChange)="test()">
-  <option *ngFor="let gameType of gameTypes"
-  [value]="gameType">
-    {{gameType}}
-  </option>
-</select>
-
+<h1>Auflistung aller GameTypes, zu Ende fehlerhafter Gametyp:</h1>
+<sportfest22-game *ngFor="let gt of types" [gameType]="gt"></sportfest22-game>
+<sportfest22-game></sportfest22-game>
