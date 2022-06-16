@@ -1,3 +1,11 @@
 <h1>Auflistung aller GameTypes, zu Ende fehlerhafter Gametyp:</h1>
-<sportfest22-game *ngFor="let gt of types" [gameType]="gt"></sportfest22-game>
+
+<sportfest22-game [match]="demoMatchType1"></sportfest22-game>
+
+<sportfest22-game [match]="demoMatchType2"></sportfest22-game>
+
 <sportfest22-game></sportfest22-game>
+
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

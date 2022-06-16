@@ -1,28 +1,26 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Gametype} from "./models/gametype.model";
+import {Match} from "./models/match.model";
+import {Class} from "./models/class.model";
+import {SportfestService} from "./services/sportfest.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  public GameType = Gametype;
+export class AppComponent implements OnInit{
 
-  public types = Object.keys(this.GameType).filter((item) => {
-    return isNaN(Number(item));
-  });
+  lat = 49.5989309;
+  lng = 6.5723304;
 
-  public currentType: Gametype = Gametype.TYPE1;
+  constructor(
+    private sportfestService: SportfestService
+  ) { }
 
-  public toggleType(): void {
-    if (this.currentType == Gametype.TYPE1) {
-      this.currentType = Gametype.TYPE2;
-    } else {
-      this.currentType = Gametype.TYPE1;
-    }
-  }
+  public demoMatchType1 : Match = new Match(0 , new Class("1A"), new Class("1B"),"Völkerball", Gametype.TYPE1)
+  public demoMatchType2 : Match = new Match(1 , new Class("2A"),  new Class("2B"),"Sprint", Gametype.TYPE2)
 
-  public test() {
+  ngOnInit(): void {
   }
 }

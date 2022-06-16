@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Match} from "../models/match.model";
+import {Gametype} from "../models/gametype.model";
+import {Class} from "../models/class.model";
 
 @Component({
   selector: 'sportfest22-game',
@@ -7,7 +10,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  @Input() gameType?: string = undefined;
+  @Input() match : Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), "DemoSpiel", Gametype.UNDEFINED);
 
   public type1active: boolean = false;
   public type2active: boolean = false;
@@ -15,10 +18,14 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.gameType == "TYPE1") {
+    if (typeof this.match == 'undefined') {
+      return
+    }
+
+    if (this.match.gameType == Gametype.TYPE1) {
       this.type1active = true;
       this.type2active = false;
-    } else if (this.gameType == "TYPE2") {
+    } else if (this.match.gameType == Gametype.TYPE2) {
       this.type1active = false;
       this.type2active = true;
     }

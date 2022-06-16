@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import {GameModule} from "./game/game.module";
 import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
+import {HttpClientModule} from "@angular/common/http";
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,12 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
-    GameModule
+    GameModule,
+    BrowserModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCX4V6zODLwes4vzNRtgn_0XZCcfl4nYL0'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
