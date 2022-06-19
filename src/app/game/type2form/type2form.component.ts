@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Match} from "../../models/match.model";
-import {Class} from "../../models/class.model";
-import {Gametype} from "../../models/gametype.model";
+import {Match} from "../../model/match.model";
+import {Class} from "../../model/class.model";
+import {Gametype} from "../../model/gametype.model";
+import {SportfestService} from "../../service/sportfest.service";
 
 @Component({
   selector: 'sportfest22-type2form',
@@ -14,9 +15,14 @@ export class Type2formComponent implements OnInit {
 
   public btnVisible : boolean = true;
 
-  constructor() { }
+  books:Class[] = []
 
-  ngOnInit(): void {
+  constructor(private testService : SportfestService) { }
+
+  ngOnInit() {
+    this.testService.getAllClasses().subscribe(bookList => {
+      this.books = bookList
+    })
   }
 
   public main() : void {

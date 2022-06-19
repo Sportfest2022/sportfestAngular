@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Gametype} from "./models/gametype.model";
-import {Match} from "./models/match.model";
-import {Class} from "./models/class.model";
+import {Match} from "./model/match.model";
+import {Class} from "./model/class.model";
 import {SportfestService} from "./services/sportfest.service";
+import {Gametype} from "./model/gametype.model";
+import {concatMap, interval, startWith, Subject, switchMap} from "rxjs";
+import {GameComponent} from "./game/game.component";
 
 @Component({
   selector: 'app-root',

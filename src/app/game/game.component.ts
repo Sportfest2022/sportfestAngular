@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Match} from "../models/match.model";
-import {Gametype} from "../models/gametype.model";
-import {Class} from "../models/class.model";
+import {Match} from "../model/match.model";
+import {Class} from "../model/class.model";
+import {Gametype} from "../model/gametype.model";
 
 @Component({
   selector: 'sportfest22-game',

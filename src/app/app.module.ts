@@ -3,10 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {GameModule} from "./game/game.module";
+import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule} from "@angular/common/http";
-import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -19,9 +18,10 @@ import { AgmCoreModule } from '@agm/core';
     GameModule,
     BrowserModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({
+    /*AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCX4V6zODLwes4vzNRtgn_0XZCcfl4nYL0'
-    })
+    }),*/
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
