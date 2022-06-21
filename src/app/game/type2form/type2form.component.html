@@ -2,8 +2,7 @@
   <div class="centered">
     <h2>Kommendes Spiel:</h2>
     <h3>Klasse {{match.class1.name}} vs Klasse {{match.class2.name}}</h3>
-    <h3>Betreuer: Lars Langschläger</h3>
-    <h3>{{match.gameName}} - ID: {{match.id}}</h3>
+    <h4>{{match.gameName}} - ID: {{match.id}}</h4>
     <br>
 
     <h3>Schnelleres Team:</h3>
@@ -47,14 +46,4 @@
       <div></div>
     </div>
   </div>
-</div>
-
-<h3>Book Library</h3>
-<div *ngIf="books.length > 0">
-  <div *ngFor="let book of books">
-    {{book.id}} - <b>{{book.name}}</b>
-  </div>
-</div>
-<div *ngIf="books.length == 0">
-  There are no books in the library.
 </div>

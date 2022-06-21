@@ -1,3 +1,11 @@
-<h1>Login</h1>
-<input type="text">
-<input type="password">
+<div id="container">
+  <div class="centered">
+    <h2>{{loggedIn ? 'Angemeldet als ' + loginService.getUserDataLoc() : 'Anmeldung'}}</h2>
+
+    <input type="text" class="input" placeholder="Nutzername">
+    <br>
+    <input type="password" class="input" placeholder="PIN">
+    <br>
+    <button (click)="login()">TestLogin</button>
+  </div>
+</div>

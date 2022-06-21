@@ -1,6 +1,17 @@
+<link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css" />
+<header class="header">
+  <a href="/" class="logo"><b>Sportfest 2022</b></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
 
-<sportfest22-game [match]="demoMatchType1"></sportfest22-game>
 
-<sportfest22-game [match]="demoMatchType2"></sportfest22-game>
+    <li *ngIf="!loggedIn" class="is-active"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li *ngIf="loggedIn" class="is-active"><a (click)="logout()">Logout</a></li>
 
-<sportfest22-game></sportfest22-game>
+    <li><a routerLink="/index/listitem" routerLinkActive="active">Admin</a></li>
+  </ul>
+</header>
+
+<br><br><br>
+<router-outlet></router-outlet>

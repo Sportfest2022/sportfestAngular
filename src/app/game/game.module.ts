@@ -4,6 +4,7 @@ import { GameComponent } from './game.component';
 import { Type1formComponent } from './type1form/type1form.component';
 import { Type2formComponent } from './type2form/type2form.component';
 import { TypenotfoundComponent } from './typenotfound/typenotfound.component';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -18,7 +19,8 @@ import { TypenotfoundComponent } from './typenotfound/typenotfound.component';
         GameComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ]
 })
 export class GameModule { }
