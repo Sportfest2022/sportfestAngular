@@ -26,9 +26,6 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.userUpdate.emit();
     this.loginService.login("test", "test", this.router)
-    this.loginService.getUserData("test", "test").subscribe(value => {
-      console.log(value.stationId)
-    })
   }
 
   logout(): void {

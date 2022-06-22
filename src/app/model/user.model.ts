@@ -5,5 +5,6 @@ export interface User {
   lastname: String;
   existing: boolean;
   stationId: number;
+  gameType: number;
   admin: boolean;
 }

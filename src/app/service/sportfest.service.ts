@@ -30,7 +30,7 @@ export class SportfestService {
     this.userUpdate.emit(true);
     this.http.get(getLoginUrl).subscribe(value => {
       localStorage.setItem('currentUser', JSON.stringify(value));
-      router.navigate(["type1"]);
+      router.navigate(["type" + this.getUserGameType()]);
     });
   }
 
@@ -52,15 +52,23 @@ export class SportfestService {
 
 
   public getUserData(username: String, password: String): Observable<User> {
-    // var url: string = "http://wargearteam.service.myplayplanet.dev:9090";
     return this.get(this.url, "/login/" + username + "/" + password);
   }
 
-  public getUserDataLoc(): String {
+  public getUserFirstName(): String {
     let localJSON = localStorage.getItem('currentUser');
     if (localJSON == null) {
       return "";
     }
     return JSON.parse(localJSON).vorname;
+  }
+
+
+  public getUserGameType(): String {
+    let localJSON = localStorage.getItem('currentUser');
+    if (localJSON == null) {
+      return "";
+    }
+    return JSON.parse(localJSON).gameType;
   }
 }

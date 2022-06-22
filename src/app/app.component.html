@@ -5,7 +5,6 @@
   <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
   <ul class="menu">
 
-
     <li *ngIf="!loggedIn" class="is-active"><a routerLink="/login" routerLinkActive="active">Login</a></li>
     <li *ngIf="loggedIn" class="is-active"><a (click)="logout()">Logout</a></li>
 
@@ -13,5 +12,5 @@
   </ul>
 </header>
 
-<br><br><br>
+
 <router-outlet></router-outlet>
