@@ -5,6 +5,7 @@ import { Type1formComponent } from './type1form/type1form.component';
 import { Type2formComponent } from './type2form/type2form.component';
 import { TypenotfoundComponent } from './typenotfound/typenotfound.component';
 import {RouterModule} from "@angular/router";
+import { Type3formComponent } from './type3form/type3form.component';
 
 
 
@@ -13,7 +14,8 @@ import {RouterModule} from "@angular/router";
     GameComponent,
     Type1formComponent,
     Type2formComponent,
-    TypenotfoundComponent
+    TypenotfoundComponent,
+    Type3formComponent
   ],
     exports: [
         GameComponent
