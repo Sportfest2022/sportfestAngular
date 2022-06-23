@@ -1,9 +1,9 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Observable, throwError} from "rxjs";
-import {Class} from "../model/class.model";
+import {Class} from "../../model/class.model";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {User} from "../model/user.model";
+import {User} from "../../model/user.model";
 import {catchError} from "rxjs/operators";
 
 @Injectable({

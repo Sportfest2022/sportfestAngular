@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Match} from "../../model/match.model";
 import {Class} from "../../model/class.model";
 import {Gametype} from "../../model/gametype.model";
-import {SportfestService} from "../../service/sportfest.service";
+import {SportfestService} from "../../service/sportfest/sportfest.service";
 
 @Component({
   selector: 'sportfest22-type2form',

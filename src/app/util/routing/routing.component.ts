@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "../login/login.component";
-import {AuthguardService} from "../../services/authguard.service";
+import {AuthguardService} from "../../service/authguard/authguard.service";
 import {Type1formComponent} from "../../game/type1form/type1form.component";
 import {DefaultComponent} from "../default/default.component";
 import {Type2formComponent} from "../../game/type2form/type2form.component";

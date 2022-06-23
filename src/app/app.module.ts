@@ -8,7 +8,7 @@ import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './util/login/login.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./util/routing/routing.component";
-import {AuthguardService} from "./services/authguard.service";
+import {AuthguardService} from "./service/authguard/authguard.service";
 import { DefaultComponent } from './util/default/default.component';
 import { SuccessComponent } from './util/success/success.component';
 

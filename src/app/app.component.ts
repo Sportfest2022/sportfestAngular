@@ -4,7 +4,7 @@ import {Class} from "./model/class.model";
 import {Gametype} from "./model/gametype.model";
 import {concatMap, interval, startWith, Subject, switchMap} from "rxjs";
 import {GameComponent} from "./game/game.component";
-import {SportfestService} from "./service/sportfest.service";
+import {SportfestService} from "./service/sportfest/sportfest.service";
 import {Router} from "@angular/router";
 
 @Component({
