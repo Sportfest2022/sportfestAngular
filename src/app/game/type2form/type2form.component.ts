@@ -15,14 +15,9 @@ export class Type2formComponent implements OnInit {
 
   public btnVisible : boolean = true;
 
-  books:Class[] = []
-
   constructor(private testService : SportfestService) { }
 
   ngOnInit() {
-    this.testService.getAllClasses().subscribe(bookList => {
-      this.books = bookList
-    })
   }
 
   public main() : void {

@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Match} from "../../model/match.model";
+import {Class} from "../../model/class.model";
+import {Gametype} from "../../model/gametype.model";
+import {SportfestService} from "../../service/sportfest.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -8,9 +13,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Type1formComponent implements OnInit {
 
-  constructor() { }
+  @Input() match: Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), "DemoSpiel", Gametype.UNDEFINED);
 
-  ngOnInit(): void {
+  public btnVisible: boolean = true;
+
+  constructor(private testService: SportfestService, private router : Router) {
   }
 
+  ngOnInit() {
+  }
+
+  public main(): void {
+    setTimeout(() => this.btnVisible = false, 300); // 2500 is millisecond
+    this.router.navigate(["/success"]);
+  }
 }

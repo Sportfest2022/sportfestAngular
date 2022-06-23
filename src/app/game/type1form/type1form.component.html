@@ -1,3 +1,30 @@
-<p>Iwas</p>
-<br><br>
-<h1>???</h1>
+<div id="container">
+  <div class="centered">
+    <h2>Kommendes Spiel:</h2>
+    <h3>Klasse {{match.class1.name}} vs Klasse {{match.class2.name}}</h3>
+    <h4>{{match.gameName}} - ID: {{match.id}}</h4>
+    <br>
+
+    <h3>Schnelleres Team:</h3>
+    <div class="container p-4">
+      <div class="card p-2">
+        <select name="type2formWinnerSelect" id="t2ws">
+          <option>{{match.class1.name}}</option>
+          <option>{{match.class2.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <br>
+
+    <button name="type2formWinnerConfirm" id="t2wc" class="confirm" (click)="main()" *ngIf="btnVisible">Bestätigen
+    </button>
+    <div class="loading" *ngIf="!btnVisible">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>

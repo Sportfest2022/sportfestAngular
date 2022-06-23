@@ -5,17 +5,19 @@ import { AppComponent } from './app.component';
 import {GameModule} from "./game/game.module";
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './util/login/login.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./util/routing/routing.component";
 import {AuthguardService} from "./services/authguard.service";
 import { DefaultComponent } from './util/default/default.component';
+import { SuccessComponent } from './util/success/success.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DefaultComponent
+    DefaultComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

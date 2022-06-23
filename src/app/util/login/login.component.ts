@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {SportfestService} from "../service/sportfest.service";
+import {SportfestService} from "../../service/sportfest.service";
 import {Router} from "@angular/router";
 
 @Component({
