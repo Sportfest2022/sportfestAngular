@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {SportfestService} from "../../service/sportfest/sportfest.service";
 import {Router} from "@angular/router";
 
@@ -14,23 +14,40 @@ export class LoginComponent implements OnInit {
 
   public loggedIn = false;
 
+  public username: string = "";
+  public password: string = "";
+
   @Output() userUpdate = new EventEmitter();
 
   ngOnInit(): void {
     this.loggedIn = (localStorage.getItem('currentUser') != null)
-    if (this.loggedIn) {
-
-    }
   }
 
   login(): void {
     this.userUpdate.emit();
-    this.loginService.login("test", "test", this.router)
+    this.loginService.login(this.username, this.password, this.router, this.onFail)
+  }
+
+  testLogin() {
+    this.userUpdate.emit();
+    this.loginService.login("test", "test", this.router, this.onFail)
+  }
+
+  onFail(router : Router) {
+    console.log("Login failed")
   }
 
   logout(): void {
+    this.userUpdate.emit();
     localStorage.removeItem('currentUser');
     this.loggedIn = false;
   }
 
+  onKeyName(event: KeyboardEvent) {
+    this.username = (event.target as HTMLInputElement).value;
+  }
+
+  onKeyPassword(event: KeyboardEvent) {
+    this.password = (event.target as HTMLInputElement).value;
+  }
 }

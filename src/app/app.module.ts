@@ -11,13 +11,15 @@ import {AppRoutingModule} from "./util/routing/routing.component";
 import {AuthguardService} from "./service/authguard/authguard.service";
 import { DefaultComponent } from './util/default/default.component';
 import { SuccessComponent } from './util/success/success.component';
+import { WaitingComponent } from './util/waiting/waiting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DefaultComponent,
-    SuccessComponent
+    SuccessComponent,
+    WaitingComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { Type2formComponent } from './type2form/type2form.component';
 import { TypenotfoundComponent } from './typenotfound/typenotfound.component';
 import {RouterModule} from "@angular/router";
 import { Type3formComponent } from './type3form/type3form.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -20,9 +21,10 @@ import { Type3formComponent } from './type3form/type3form.component';
     exports: [
         GameComponent
     ],
-    imports: [
-        CommonModule,
-        RouterModule
-    ]
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule
+  ]
 })
 export class GameModule { }

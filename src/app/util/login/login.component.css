@@ -30,3 +30,19 @@
   font-family: "Product Sans", serif;
   text-align: center;
 }
+
+.confirm {
+  background-color: #21f35c;
+  border-radius: 10px;
+  border: black;
+  color: #000000;
+  margin-top: 10px;
+  padding: 20px 40px 20px 40px;
+  font-size: 20px;
+  font-family: "Product Sans", serif;
+  text-align: center;
+}
+.confirm:focus  {
+  background-color: #1e9119;
+  transition: 0.3s;
+}

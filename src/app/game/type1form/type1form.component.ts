@@ -4,6 +4,7 @@ import {Class} from "../../model/class.model";
 import {Gametype} from "../../model/gametype.model";
 import {SportfestService} from "../../service/sportfest/sportfest.service";
 import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 
 @Component({
@@ -16,6 +17,7 @@ export class Type1formComponent implements OnInit {
   @Input() match: Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), "DemoSpiel", Gametype.UNDEFINED);
 
   public btnVisible: boolean = true;
+  public selectedOption: string = "";
 
   constructor(private testService: SportfestService, private router : Router) {
   }
@@ -23,8 +25,19 @@ export class Type1formComponent implements OnInit {
   ngOnInit() {
   }
 
-  public main(): void {
-    setTimeout(() => this.btnVisible = false, 300); // 2500 is millisecond
+  public sendResult(winningTeamName : string): void {
+    setTimeout(() => this.sendData(winningTeamName), 300); // 2500 is millisecond
     this.router.navigate(["/success"]);
+  }
+
+
+  public sendData(winningTeamName : string) {
+    this.btnVisible = false;
+  }
+
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.selectedOption = event.target.value;
+    console.log(this.selectedOption)
   }
 }

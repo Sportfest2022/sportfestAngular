@@ -2,10 +2,15 @@
   <div class="centered">
     <h2>{{loggedIn ? 'Angemeldet als ' + loginService.getUserFirstName() : 'Anmeldung'}}</h2>
 
-    <input type="text" class="input" placeholder="Nutzername">
+    <input type="text" class="input" placeholder="Nutzername" (keyup)="onKeyName($event)">
     <br>
-    <input type="password" class="input" placeholder="PIN">
+    <input type="password" class="input" placeholder="PIN" (keyup)="onKeyPassword($event)">
     <br>
-    <button (click)="login()">TestLogin</button>
+
+    <button type="button" name="type2formWinnerConfirm" id="t2wc" class="confirm" (click)="login()">
+      Bestätigen
+    </button>
+    <br>
+    <button (click)="testLogin()" class="confirm">DemoAdmin</button>
   </div>
 </div>

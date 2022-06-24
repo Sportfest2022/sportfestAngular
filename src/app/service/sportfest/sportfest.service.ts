@@ -23,12 +23,16 @@ export class SportfestService {
     return this.http.get<Class[]>(this.url + "classes/all");
   }
 
-  login(username: string, password: string, router: Router): void {
+  login(username: string, password: string, router: Router, onFail: Function) {
 
     const getLoginUrl = this.url + 'login/' + username + '/' + password;
 
     this.userUpdate.emit(true);
-    this.http.get(getLoginUrl).subscribe(value => {
+    this.http.get<User>(getLoginUrl).subscribe(value => {
+      if (!value.existing) {
+        onFail.call([])
+        return
+      }
       localStorage.setItem('currentUser', JSON.stringify(value));
       router.navigate(["type" + this.getUserGameType()]);
     });
