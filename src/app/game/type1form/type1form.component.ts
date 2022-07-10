@@ -14,24 +14,30 @@ import {NgForm} from "@angular/forms";
 })
 export class Type1formComponent implements OnInit {
 
-  @Input() match : Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), 10, false, new Date(Date.now()), "TBD", "gj");
+  @Input() match : Match = new Match(1, new Class("Placholder"), new Class("Placeholder"), 10, false, new Date(Date.now()), "TBD", "gj");
 
   public btnVisible: boolean = true;
-  public selectedOption: string = "";
+  public selectedOption: String = "";
 
-  constructor(private testService: SportfestService, private router : Router) {
+  constructor(private sportfestService: SportfestService, private router : Router) {
+    this.selectedOption = this.match.klasse1.name;
   }
 
   ngOnInit() {
   }
 
-  public sendResult(winningTeamName : string): void {
-    setTimeout(() => this.sendData(winningTeamName), 300); // 2500 is millisecond
-    this.router.navigate(["/success"]);
+  public sendResult(winningTeamName : String): void {
+    this.hideBtn();
+    console.log(winningTeamName)
+    this.sportfestService.saveType1Result(this.sportfestService.getUserNick(), this.match.id, winningTeamName).subscribe(value => {
+        if (value) {
+          this.router.navigate(["/success"])
+        }
+    })
   }
 
 
-  public sendData(winningTeamName : string) {
+  public hideBtn() {
     this.btnVisible = false;
   }
 

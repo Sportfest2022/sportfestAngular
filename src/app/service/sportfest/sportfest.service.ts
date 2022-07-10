@@ -60,6 +60,11 @@ export class SportfestService {
     return this.get(this.url, "/login/" + username + "/" + password);
   }
 
+
+  public saveType1Result(username: String, matchId: number, winningTeam: String): Observable<boolean> {
+    return this.get(this.url, "match/result/type1/" + username + "/" + matchId + "/" + winningTeam);
+  }
+
   public getMatches(username: String): Observable<Match[]> {
     return this.get(this.url, "/match/" + username)
   }
@@ -70,6 +75,15 @@ export class SportfestService {
       return "";
     }
     return JSON.parse(localJSON).vorname;
+  }
+
+
+  public getUserNick(): String {
+    let localJSON = localStorage.getItem('currentUser');
+    if (localJSON == null) {
+      return "";
+    }
+    return JSON.parse(localJSON).name;
   }
 
 
