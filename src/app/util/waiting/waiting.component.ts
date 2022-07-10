@@ -9,6 +9,8 @@ export class WaitingComponent implements OnInit {
 
   constructor() { }
 
+  // TODO: Live update; activate "Next match" button if next match was found
+
   ngOnInit(): void {
   }
 

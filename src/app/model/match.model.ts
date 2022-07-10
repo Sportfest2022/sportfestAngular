@@ -3,16 +3,22 @@ import {Class} from "./class.model";
 
 export class Match {
   id: number;
-  class1: Class;
-  class2: Class;
-  gameName : string;
-  gameType : Gametype;
+  klasse1: Class;
+  klasse2: Class;
+  duration   : number;
+  _public : boolean;
+  start : Date;
+  status : string;
+  betreuer: string;
 
-  constructor(id : number, class1 : Class, class2 : Class, gameName : string, gameType : Gametype) {
+  constructor(id : number, klasse1 : Class, klasse2 : Class, duration : number, _public : boolean, start : Date, status : string, betreuer : string) {
     this.id = id;
-    this.class1 = class1;
-    this.class2 = class2;
-    this.gameName = gameName;
-    this.gameType = gameType;
+    this.klasse1 = klasse1;
+    this.klasse2 = klasse2;
+    this.duration = duration;
+    this._public = _public;
+    this.start = start;
+    this.status = status;
+    this.betreuer = betreuer;
   }
 }

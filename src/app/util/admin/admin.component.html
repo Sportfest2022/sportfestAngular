@@ -1,0 +1,27 @@
+<br><br><br>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="matches">
+  <thead>
+  <tr>
+    <th>Klasse 1</th>
+    <th>Klasse 2</th>
+    <th>Duration</th>
+    <th>Time</th>
+    <th>Status</th>
+    <th>Zuständig</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let match of matches">
+    <td>{{ match.klasse1.name }}</td>
+    <td>{{ match.klasse2.name }}</td>
+    <td>{{ match.duration }}</td>
+    <td>{{ match.start}}</td>
+    <td *ngIf="match.status == 'TBD'" style="background-color: #555555">TBD</td>
+    <td *ngIf="match.status == 'RUNNING'" style="background-color: #26ff00">RNIN</td>
+    <td *ngIf="match.status == 'DELAYED'" style="background-color: #ff8000">DLAY</td>
+    <td *ngIf="match.status == 'DONE'" style="background-color: #1e732b">DONE</td>
+    <td>{{ match.betreuer}}</td>
+  </tr>
+  </tbody>
+</table>

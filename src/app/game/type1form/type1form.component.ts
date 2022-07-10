@@ -14,7 +14,7 @@ import {NgForm} from "@angular/forms";
 })
 export class Type1formComponent implements OnInit {
 
-  @Input() match: Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), "DemoSpiel", Gametype.UNDEFINED);
+  @Input() match : Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), 10, false, new Date(Date.now()), "TBD", "gj");
 
   public btnVisible: boolean = true;
   public selectedOption: string = "";

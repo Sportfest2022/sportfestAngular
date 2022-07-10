@@ -12,6 +12,7 @@ import {AuthguardService} from "./service/authguard/authguard.service";
 import { DefaultComponent } from './util/default/default.component';
 import { SuccessComponent } from './util/success/success.component';
 import { WaitingComponent } from './util/waiting/waiting.component';
+import { AdminComponent } from './util/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WaitingComponent } from './util/waiting/waiting.component';
     LoginComponent,
     DefaultComponent,
     SuccessComponent,
-    WaitingComponent
+    WaitingComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

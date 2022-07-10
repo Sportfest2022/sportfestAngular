@@ -5,6 +5,7 @@ import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {User} from "../../model/user.model";
 import {catchError} from "rxjs/operators";
+import {Match} from "../../model/match.model";
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,10 @@ export class SportfestService {
 
   public getUserData(username: String, password: String): Observable<User> {
     return this.get(this.url, "/login/" + username + "/" + password);
+  }
+
+  public getMatches(username: String): Observable<Match[]> {
+    return this.get(this.url, "/match/" + username)
   }
 
   public getUserFirstName(): String {

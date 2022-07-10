@@ -8,6 +8,7 @@ import {DefaultComponent} from "../default/default.component";
 import {Type2formComponent} from "../../game/type2form/type2form.component";
 import {SuccessComponent} from "../success/success.component";
 import {WaitingComponent} from "../waiting/waiting.component";
+import {AdminComponent} from "../admin/admin.component";
 
 const routes: Routes = [
   { path: 'type1', component: Type1formComponent, canActivate: [AuthguardService]},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'success', component: SuccessComponent},
   { path: 'waiting', component: WaitingComponent},
+  { path: 'admin', component: AdminComponent},
   { path: '**', component: DefaultComponent}
 ];
 
