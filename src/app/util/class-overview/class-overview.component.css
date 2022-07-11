@@ -1,0 +1,20 @@
+td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 20px;
+}
+
+table {
+  font-size: 20px;
+  width: 100%;
+  font-family: "Product Sans", serif;
+}
+
+.centered {
+  font-size: 30px;
+  font-family: "Product Sans", serif;
+  width: 100%;
+  text-align: center;
+}

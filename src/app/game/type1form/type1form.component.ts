@@ -23,6 +23,7 @@ export class Type1formComponent {
     new Date(Date.now()),
     "Loading..",
     "Loading...",
+    "Loading...",
     "Loading...");
 
   public btnVisible: boolean = true;

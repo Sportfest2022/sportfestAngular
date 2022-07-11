@@ -13,6 +13,7 @@ import { DefaultComponent } from './util/default/default.component';
 import { SuccessComponent } from './util/success/success.component';
 import { WaitingComponent } from './util/waiting/waiting.component';
 import { AdminComponent } from './util/admin/admin.component';
+import { ClassOverviewComponent } from './util/class-overview/class-overview.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AdminComponent } from './util/admin/admin.component';
     DefaultComponent,
     SuccessComponent,
     WaitingComponent,
-    AdminComponent
+    AdminComponent,
+    ClassOverviewComponent
   ],
   imports: [
     BrowserModule,

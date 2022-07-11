@@ -1,0 +1,22 @@
+<br><br><br>
+
+<body>
+
+<p class="centered">Anstehende Spiele für {{className}}:</p>
+
+<table class='table table-striped tabelle' aria-labelledby="tableLabel" *ngIf="matches">
+  <thead>
+  <tr>
+    <th>Gegner</th>
+    <th>Start</th>
+    <th>Station</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let match of matches">
+    <td>{{getEnemy(match)}}</td>
+    <td>{{match.start | date:'h:mm'}}</td>
+    <td>{{match.stationname}}</td>
+  </tr>
+</table>
+</body>
