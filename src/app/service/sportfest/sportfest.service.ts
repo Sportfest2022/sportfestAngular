@@ -65,8 +65,12 @@ export class SportfestService {
     return this.get(this.url, "match/result/type1/" + username + "/" + matchId + "/" + winningTeam);
   }
 
+  public getMatchResult(username: String): Observable<Set<Match>> {
+    return this.get(this.url, "match/" + username);
+  }
+
   public getMatches(username: String): Observable<Match[]> {
-    return this.get(this.url, "/match/" + username)
+    return this.get(this.url, "match/" + username)
   }
 
   public getUserFirstName(): String {

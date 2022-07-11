@@ -11,7 +11,7 @@ import {SportfestService} from "../../service/sportfest/sportfest.service";
 })
 export class Type2formComponent implements OnInit {
 
-  @Input() match : Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), 10, false, new Date(Date.now()), "TBD", "jsjo");
+  @Input() match : Match = new Match(-1, new Class("Placholder"), new Class("Placeholder"), 10, false, new Date(Date.now()), "TBD", "jsjo", "Spiel");
 
   public btnVisible : boolean = true;
 

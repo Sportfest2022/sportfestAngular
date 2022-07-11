@@ -12,22 +12,33 @@ import {NgForm} from "@angular/forms";
   templateUrl: './type1form.component.html',
   styleUrls: ['./type1form.component.css']
 })
-export class Type1formComponent implements OnInit {
+export class Type1formComponent {
 
-  @Input() match : Match = new Match(1, new Class("Placholder"), new Class("Placeholder"), 10, false, new Date(Date.now()), "TBD", "gj");
+  public match : Match = new Match(
+    1,
+    new Class("Loading..."),
+    new Class("Loading.."),
+    10,
+    false,
+    new Date(Date.now()),
+    "Loading..",
+    "Loading...",
+    "Loading...");
 
   public btnVisible: boolean = true;
   public selectedOption: String = "";
 
   constructor(private sportfestService: SportfestService, private router : Router) {
-    this.selectedOption = this.match.klasse1.name;
-  }
-
-  ngOnInit() {
+    sportfestService.getMatches(this.sportfestService.getUserNick()).subscribe(value => {
+      value.forEach(value1 => {
+        this.match = value1;
+        this.selectedOption = this.match.klasse1.name;
+      })
+    });
   }
 
   public sendResult(winningTeamName : String): void {
-    this.hideBtn();
+    this.btnVisible = false;
     console.log(winningTeamName)
     this.sportfestService.saveType1Result(this.sportfestService.getUserNick(), this.match.id, winningTeamName).subscribe(value => {
         if (value) {
@@ -36,13 +47,7 @@ export class Type1formComponent implements OnInit {
     })
   }
 
-
-  public hideBtn() {
-    this.btnVisible = false;
-  }
-
   selectChangeHandler (event: any) {
-    //update the ui
     this.selectedOption = event.target.value;
     console.log(this.selectedOption)
   }
