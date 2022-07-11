@@ -60,17 +60,20 @@ export class SportfestService {
     return this.get(this.url, "/login/" + username + "/" + password);
   }
 
-
   public saveType1Result(username: String, matchId: number, winningTeam: String): Observable<boolean> {
     return this.get(this.url, "match/result/type1/" + username + "/" + matchId + "/" + winningTeam);
   }
 
-  public getMatchResult(username: String): Observable<Set<Match>> {
-    return this.get(this.url, "match/" + username);
+  public isBelow5Min(username: String): Observable<boolean> {
+    return this.get(this.url, "match/below5Min/" + username);
   }
 
   public getMatches(username: String): Observable<Match[]> {
     return this.get(this.url, "match/" + username)
+  }
+
+  public getNextMatchTimeFormat(username: String): Observable<string> {
+    return this.http.get(this.url + "match/nextmatchtime/" + username, {responseType: "text"});
   }
 
   public getUserFirstName(): String {

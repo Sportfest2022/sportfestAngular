@@ -14,9 +14,9 @@ const routes: Routes = [
   { path: 'type1', component: Type1formComponent, canActivate: [AuthguardService]},
   { path: 'type2', component: Type2formComponent, canActivate: [AuthguardService]},
   { path: 'login', component: LoginComponent},
-  { path: 'success', component: SuccessComponent},
-  { path: 'waiting', component: WaitingComponent},
-  { path: 'admin', component: AdminComponent},
+  { path: 'success', component: SuccessComponent, canActivate: [AuthguardService]},
+  { path: 'waiting', component: WaitingComponent, canActivate: [AuthguardService]},
+  { path: 'admin', component: AdminComponent, canActivate: [AuthguardService]},
   { path: '**', component: DefaultComponent}
 ];
 

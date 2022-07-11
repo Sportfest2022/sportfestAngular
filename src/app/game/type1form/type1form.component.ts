@@ -30,10 +30,12 @@ export class Type1formComponent {
 
   constructor(private sportfestService: SportfestService, private router : Router) {
     sportfestService.getMatches(this.sportfestService.getUserNick()).subscribe(value => {
-      value.forEach(value1 => {
+      for (let value1 of value) {
+        console.log(value1.id)
         this.match = value1;
         this.selectedOption = this.match.klasse1.name;
-      })
+        break;
+      }
     });
   }
 

@@ -15,7 +15,7 @@ export class AdminComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.sportfestService.getMatches("").subscribe(value => {
+    this.sportfestService.getMatches("test").subscribe(value => {
       this.matches = value;
     })
   }

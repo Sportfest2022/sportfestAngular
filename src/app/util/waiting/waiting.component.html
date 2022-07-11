@@ -3,8 +3,9 @@
     <br><br><br>
     <h1>Du hast erstmal Pause</h1>
     <img src="assets/hourglass.png" height="100px">
-    <p>Dein nächstes Spiel beginnt um 10.25</p>
+    <p>Das nächstes Match an deiner Station beginnt um <b>{{nextMatchTime}}</b>.</p>
+    <p>Der Button wird 5 Minuten vor Spielbeginn aktiviert.</p>
     <div class="placeholder"></div>
-    <button class="nextmatch">Nächstes Match</button>
+    <button [class]="btnClass" (click)="redirect()">Nächstes Match</button>
   </div>
 </div>
