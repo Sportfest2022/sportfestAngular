@@ -1,5 +1,5 @@
-import {Gametype} from "./gametype.model";
 import {Class} from "./class.model";
+
 
 export class Match {
   id: number;

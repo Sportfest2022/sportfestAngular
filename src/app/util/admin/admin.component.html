@@ -1,11 +1,11 @@
 <br><br><br>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="matches">
+<table class='table table-striped admin' aria-labelledby="tableLabel" *ngIf="matches">
   <thead>
   <tr>
     <th>Klasse 1</th>
     <th>Klasse 2</th>
-    <th>Duration</th>
+    <th>Station</th>
     <th>Time</th>
     <th>Status</th>
     <th>Zuständig</th>
@@ -15,12 +15,12 @@
   <tr *ngFor="let match of matches">
     <td>{{ match.klasse1.name }}</td>
     <td>{{ match.klasse2.name }}</td>
-    <td>{{ match.duration }}</td>
+    <td>{{ match.stationname }}</td>
     <td>{{ match.start}}</td>
-    <td *ngIf="match.status == 'TBD'" style="background-color: #555555">TBD</td>
-    <td *ngIf="match.status == 'RUNNING'" style="background-color: #26ff00">RNIN</td>
-    <td *ngIf="match.status == 'DELAYED'" style="background-color: #ff8000">DLAY</td>
-    <td *ngIf="match.status == 'DONE'" style="background-color: #1e732b">DONE</td>
+    <td *ngIf="match.status == 'TBD'" style="background-color: rgba(85,85,85,0.5)">TBD</td>
+    <td *ngIf="match.status == 'RUNNING'" style="background-color: rgba(38,255,0,0.5)">RNIN</td>
+    <td *ngIf="match.status == 'DELAYED'" style="background-color: rgba(255,128,0,0.5)">DLAY</td>
+    <td *ngIf="match.status == 'DONE'" style="background-color: rgba(30,115,43,0.5)">DONE</td>
     <td>{{ match.betreuer}}</td>
   </tr>
   </tbody>

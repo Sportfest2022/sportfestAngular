@@ -18,3 +18,24 @@ table {
   width: 100%;
   text-align: center;
 }
+
+.button-container {
+  text-align:center;
+  height:450px;
+  width:100%;
+}
+
+.button-children {
+  display:inline-block;
+  width: 100px;
+
+  background-color: rgba(33, 150, 243, 0.5);
+  color: #000000;
+  border-radius: 10px;
+  border: black;
+  font-size: 20px;
+  font-family: "Product Sans", serif;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+}

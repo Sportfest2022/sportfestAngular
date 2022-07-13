@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'success', component: SuccessComponent, canActivate: [AuthguardService]},
   { path: 'waiting', component: WaitingComponent, canActivate: [AuthguardService]},
   { path: 'admin', component: AdminComponent, canActivate: [AuthguardService]},
-  { path: 'class', component: ClassOverviewComponent},
+  { path: 'class/:class', component: ClassOverviewComponent},
   { path: 'done', component: DoneComponent},
   { path: '**', component: DefaultComponent}
 ];

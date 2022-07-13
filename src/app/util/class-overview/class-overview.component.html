@@ -4,7 +4,7 @@
 
 <p class="centered">Anstehende Spiele für {{className}}:</p>
 
-<table class='table table-striped tabelle' aria-labelledby="tableLabel" *ngIf="matches">
+<table class='table table-striped tabelle' aria-labelledby="tableLabel" *ngIf="!noParam">
   <thead>
   <tr>
     <th>Gegner</th>
@@ -19,4 +19,8 @@
     <td>{{match.stationname}}</td>
   </tr>
 </table>
+
+<div *ngIf="noParam" class="button-container">
+  <button *ngFor="let _class of classes" class="button-children" (click)="redirect(_class.name)">{{_class.name}}</button>
+</div>
 </body>

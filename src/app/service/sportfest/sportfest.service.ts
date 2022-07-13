@@ -72,6 +72,10 @@ export class SportfestService {
     return this.get(this.url, "match/" + username)
   }
 
+  public getAll(): Observable<Match[]> {
+    return this.get(this.url, "match/all");
+  }
+
   public getNextMatchTimeFormat(username: String): Observable<string> {
     return this.http.get(this.url + "match/nextmatchtime/" + username, {responseType: "text"});
   }

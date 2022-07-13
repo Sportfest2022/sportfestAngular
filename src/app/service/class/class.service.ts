@@ -21,4 +21,8 @@ export class ClassService {
   getAllMatches(className : String): Observable<Match[]> {
     return this.http.get<Match[]>(this.url + "matches/" + className);
   }
+
+  getAllClasses(): Observable<Class[]> {
+    return this.http.get<Class[]>(this.url + "all");
+  }
 }
