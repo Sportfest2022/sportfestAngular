@@ -1,0 +1,37 @@
+
+.nextmatch {
+  background-color: rgba(160, 164, 160, 0.26);
+  color: lightgray;
+  border-radius: 10px;
+  border: black;
+  padding: 20px 40px 20px 40px;
+  font-size: 20px;
+  font-family: "Product Sans", serif;
+  text-align: center;
+}
+
+.nextmatch-cooler {
+  background-color: rgb(0, 255, 0);
+  color: #000000;
+  border-radius: 10px;
+  border: black;
+  padding: 20px 40px 20px 40px;
+  font-size: 20px;
+  font-family: "Product Sans", serif;
+  text-align: center;
+}
+
+
+.centered {
+  width: 100%;
+  text-align: center;
+}
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  /* flex-direction: column;*/
+  align-items: center;
+  /* justify-content: center;*/
+}

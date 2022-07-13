@@ -15,6 +15,7 @@ import { WaitingComponent } from './util/waiting/waiting.component';
 import { AdminComponent } from './util/admin/admin.component';
 import { ClassOverviewComponent } from './util/class-overview/class-overview.component';
 import { DoneComponent } from './util/done/done.component';
+import { UnemployedComponent } from './util/unemployed/unemployed.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DoneComponent } from './util/done/done.component';
     WaitingComponent,
     AdminComponent,
     ClassOverviewComponent,
-    DoneComponent
+    DoneComponent,
+    UnemployedComponent
   ],
   imports: [
     BrowserModule,

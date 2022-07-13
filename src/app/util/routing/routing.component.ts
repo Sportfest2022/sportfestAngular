@@ -11,6 +11,7 @@ import {WaitingComponent} from "../waiting/waiting.component";
 import {AdminComponent} from "../admin/admin.component";
 import {ClassOverviewComponent} from "../class-overview/class-overview.component";
 import {DoneComponent} from "../done/done.component";
+import {UnemployedComponent} from "../unemployed/unemployed.component";
 
 const routes: Routes = [
   { path: 'type1', component: Type1formComponent, canActivate: [AuthguardService]},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AuthguardService]},
   { path: 'class/:class', component: ClassOverviewComponent},
   { path: 'done', component: DoneComponent},
+  { path: 'unemployed', component: UnemployedComponent},
   { path: '**', component: DefaultComponent}
 ];
 
