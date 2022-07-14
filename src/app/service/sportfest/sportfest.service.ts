@@ -64,6 +64,11 @@ export class SportfestService {
     return this.get(this.url, "match/result/type1/" + username + "/" + matchId + "/" + winningTeam);
   }
 
+  public saveType2Result(username: String, matchId: number, winningTeam: String, team1Time : String, team2Time : String): Observable<boolean> {
+    return this.get(this.url, "match/result/type2/" + username + "/" + matchId + "/" + winningTeam + "/" + team1Time + "/" + team2Time);
+  }
+
+
   public isBelow5Min(username: String): Observable<boolean> {
     return this.get(this.url, "match/below5Min/" + username);
   }

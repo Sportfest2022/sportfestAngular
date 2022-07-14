@@ -16,7 +16,7 @@
     <td>{{ match.klasse1.name }}</td>
     <td>{{ match.klasse2.name }}</td>
     <td>{{ match.stationname }}</td>
-    <td>{{ match.start}}</td>
+    <td>{{ convert(match.start) }}</td>
     <td *ngIf="match.status == 'TBD'" style="background-color: rgba(85,85,85,0.5)">TBD</td>
     <td *ngIf="match.status == 'RUNNING'" style="background-color: rgba(38,255,0,0.5)">RNIN</td>
     <td *ngIf="match.status == 'DELAYED'" style="background-color: rgba(255,128,0,0.5)">DLAY</td>

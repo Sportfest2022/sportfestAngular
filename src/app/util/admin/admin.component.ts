@@ -20,4 +20,17 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  convert(start: Date) : string {
+    let s = String(start); // Pattern: 2022-07-20T11:00:00Z
+
+    s = s.replace("-", ".");
+    s = s.replace("-", ".");
+    s = s.replace("T", " ");
+    s = s.replace("Z", " ");
+
+    s = s.replace("2022.07.20", "");
+    s = s.replace(":00", "");
+
+    return s;
+  }
 }

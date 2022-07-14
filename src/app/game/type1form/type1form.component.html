@@ -5,10 +5,10 @@
     <h4>{{match.gamename}} - ID: {{match.id}}</h4>
     <br>
 
-    <h3>Schnelleres Team:</h3>
+    <h3>Sieger:</h3>
     <div class="container p-4">
       <div class="card p-2">
-        <select name="type2formWinnerSelect" id="t2ws" (change)="selectChangeHandler($event)">
+        <select id="t2ws" (change)="selectChangeHandler($event)">
           <option>{{match.klasse1.name}}</option>
           <option>{{match.klasse2.name}}</option>
         </select>
@@ -19,7 +19,7 @@
 
     <br>
 
-    <button type="button" name="type2formWinnerConfirm" id="t2wc" class="confirm" (click)="sendResult(selectedOption)"
+    <button type="button" id="t2wc" class="confirm" (click)="sendResult(selectedOption)"
             *ngIf="btnVisible">Bestätigen
     </button>
     <div class="loading" *ngIf="!btnVisible">
