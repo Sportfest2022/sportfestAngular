@@ -8,6 +8,8 @@
     <li *ngIf="!loggedIn" class="is-active"><a routerLink="/login" routerLinkActive="active">Login</a></li>
     <li *ngIf="loggedIn" class="is-active"><a (click)="logout()">Logout</a></li>
 
+    <li><a routerLink="/class/null" routerLinkActive="active">Ablauf</a></li>
+
     <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
   </ul>
 </header>

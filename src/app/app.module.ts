@@ -16,6 +16,10 @@ import { AdminComponent } from './util/admin/admin.component';
 import { ClassOverviewComponent } from './util/class-overview/class-overview.component';
 import { DoneComponent } from './util/done/done.component';
 import { UnemployedComponent } from './util/unemployed/unemployed.component';
+import { LoginSuccessComponent } from './util/login-success/login-success.component';
+import {ToastrModule} from "ngx-toastr";
+import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { UnemployedComponent } from './util/unemployed/unemployed.component';
     AdminComponent,
     ClassOverviewComponent,
     DoneComponent,
-    UnemployedComponent
+    UnemployedComponent,
+    LoginSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,9 @@ import { UnemployedComponent } from './util/unemployed/unemployed.component';
     }),*/
     FormsModule,
     AppRoutingModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     AuthguardService

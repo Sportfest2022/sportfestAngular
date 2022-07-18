@@ -2,7 +2,8 @@
 
 <body>
 
-<p class="centered">Anstehende Spiele für {{className}}:</p>
+<p class="centered" *ngIf="!noParam">Anstehende Spiele für {{className}}:</p>
+<p class="centered" *ngIf="noParam">Klasse auswählen:</p>
 
 <table class='table table-striped tabelle' aria-labelledby="tableLabel" *ngIf="!noParam">
   <thead>

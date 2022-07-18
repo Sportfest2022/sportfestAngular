@@ -1,6 +1,7 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {SportfestService} from "../../service/sportfest/sportfest.service";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public loginService: SportfestService, public router: Router) {
+  constructor(public loginService: SportfestService, public router: Router, private toastr: ToastrService) {
   }
 
   public loggedIn = false;
@@ -24,30 +25,21 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.userUpdate.emit();
     this.loginService.login(this.username, this.password, this.router, this.onFail)
-  }
-
-  testLogin() {
     this.userUpdate.emit();
-    this.loginService.login("test", "test", this.router, this.onFail)
+    this.toastr.info('Hello world!', 'Toastr fun!');
+    this.username = "";
+    this.password = "";
   }
 
   onFail(router : Router) {
-    console.log("Login failed")
+    this.username = "";
+    this.password = "";
   }
 
   logout(): void {
     this.userUpdate.emit();
     localStorage.removeItem('currentUser');
     this.loggedIn = false;
-  }
-
-  onKeyName(event: KeyboardEvent) {
-    this.username = (event.target as HTMLInputElement).value;
-  }
-
-  onKeyPassword(event: KeyboardEvent) {
-    this.password = (event.target as HTMLInputElement).value;
   }
 }

@@ -23,7 +23,7 @@ export class ClassOverviewComponent implements OnInit {
     this.route.params
       .subscribe((params) => {
           this.className = params['class'];
-          if (this.className == null || this.className == "") {
+          if (this.className == null || this.className == "null") {
             this.noParam = true;
             this.classService.getAllClasses().subscribe(value => {
               this.classes = value;
@@ -45,6 +45,8 @@ export class ClassOverviewComponent implements OnInit {
   }
 
   redirect(name: String) {
-    this.router.navigate(['/class/' + name])
+    this.router.navigate(['/class/']).then(value => {
+      this.router.navigate(['/class/' + name])
+    })
   }
 }

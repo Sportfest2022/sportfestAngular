@@ -12,6 +12,7 @@ import {Match} from "../../model/match.model";
 })
 export class SportfestService {
 
+  // TODO: Service IP
   url: string = "http://localhost:8080/api/v1/sportfest/"
 
   @Output() userUpdate = new EventEmitter();
@@ -31,10 +32,12 @@ export class SportfestService {
     this.userUpdate.emit(true);
     this.http.get<User>(getLoginUrl).subscribe(value => {
       if (!value.existing) {
+        console.log("Input fields should be cleared")
         onFail.call([])
         return
       }
       localStorage.setItem('currentUser', JSON.stringify(value));
+      if (value.admin) router.navigate(["unemployed"])
       router.navigate(["type" + this.getUserGameType()]);
     });
   }
