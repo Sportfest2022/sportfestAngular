@@ -16,6 +16,7 @@ export class SportfestService {
   url: string = "http://localhost:8080/api/v1/sportfest/"
 
   @Output() userUpdate = new EventEmitter();
+  @Output() loginFailed = new EventEmitter();
 
   constructor(private http: HttpClient) {
   }
@@ -25,7 +26,7 @@ export class SportfestService {
     return this.http.get<Class[]>(this.url + "classes/all");
   }
 
-  login(username: string, password: string, router: Router, onFail: Function) {
+  login(username: string, password: string, router: Router) {
 
     const getLoginUrl = this.url + 'login/' + username + '/' + password;
 
@@ -33,7 +34,7 @@ export class SportfestService {
     this.http.get<User>(getLoginUrl).subscribe(value => {
       if (!value.existing) {
         console.log("Input fields should be cleared")
-        onFail.call([])
+        this.loginFailed.emit();
         return
       }
       localStorage.setItem('currentUser', JSON.stringify(value));

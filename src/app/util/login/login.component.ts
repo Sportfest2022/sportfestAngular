@@ -10,7 +10,13 @@ import {ToastrService} from "ngx-toastr";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public loginService: SportfestService, public router: Router, private toastr: ToastrService) {
+  constructor(public loginService: SportfestService,
+              public router: Router,
+              private toastr: ToastrService,
+              private sportfestService: SportfestService) {
+    sportfestService.loginFailed.subscribe(value => {
+      this.onFail(router);
+    });
   }
 
   public loggedIn = false;
@@ -25,14 +31,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.loginService.login(this.username, this.password, this.router, this.onFail)
+    this.loginService.login(this.username, this.password, this.router)
     this.userUpdate.emit();
-    this.toastr.info('Hello world!', 'Toastr fun!');
     this.username = "";
     this.password = "";
   }
 
   onFail(router : Router) {
+    this.toastr.error('Logindaten überprüfen', 'Login fehlgeschlagen');
     this.username = "";
     this.password = "";
   }
